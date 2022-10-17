@@ -1,11 +1,10 @@
 package com.school.project.data;
 
-import java.util.List;
-
 
 public class Student {
     private long idnum;
     private String name;
+    private String adress;
     private int phone;
     private static long idnumcount = 0;
     
@@ -17,9 +16,9 @@ public class Student {
     public Student(String name) {
         this.idnum = idnumcount++;
     }
-    public Student(String name, int phone, List oncourses) {
+    public Student(String name, int phone, String adress) {
         this.phone=phone;
-        
+        this.adress=adress;
         this.idnum = idnumcount++;
     }
 
@@ -32,6 +31,13 @@ public class Student {
         return this.name;
     }
 
+    public String getAdress() {
+        return this.adress;
+    }
+
+    public void setAdress(String adress) {
+        this.adress = adress;
+    }
     public void setName(String name) {
         this.name = name;
     }
