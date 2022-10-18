@@ -52,7 +52,7 @@ public class CourseService {
         Student student = getbyIdnum(idnum);
         Course course = getbyId(id);
 
-        if(students != null && courses != null){
+        if(student != null && course != null){
             course.addtocourse(student);
             return true;
         }
