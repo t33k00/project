@@ -1,4 +1,5 @@
 package com.school.project.controller;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -10,11 +11,9 @@ import com.school.project.service.CourseService;
 import com.school.project.data.Student;
 import java.util.List;
 
-
 @RestController
 public class ProjectRestController {
 
-    
     @Autowired
     CourseService pCourse;
 
@@ -22,52 +21,47 @@ public class ProjectRestController {
     CourseService pStudent;
 
     @GetMapping("courses")
-    public List<Course> getCourses(){
+    public List<Course> getCourses() {
         return pCourse.getAllCourses();
-        //http://localhost:8080/courses
+        // http://localhost:8080/courses
     }
 
     @PostMapping("addcourse")
-    public Course addCourse(@RequestBody Course course){
+    public Course addCourse(@RequestBody Course course) {
         pCourse.addCourse(course);
         return course;
-        //http://localhost:8080/addcourse
+        // http://localhost:8080/addcourse
     }
-    
+
     @GetMapping("students")
-    public List<Student> getStudents(){
+    public List<Student> getStudents() {
         return pStudent.getAllStudents();
-        //http://localhost:8080/students
+        // http://localhost:8080/students
     }
 
     @PostMapping("addstudent")
-    public Student addStudent(@RequestBody Student student){
+    public Student addStudent(@RequestBody Student student) {
         pStudent.addStudent(student);
         return student;
-        //http://localhost:8080/addstudent
+        // http://localhost:8080/addstudent
     }
-    
+
     @GetMapping("addtocourse")
     public String addStocourse(
-        @RequestParam Integer studentid, Integer courseid,
-        @RequestBody(required = false) Student student){
+            @RequestParam Integer studentid, Integer courseid,
+            @RequestBody(required = false) Student student) {
         pCourse.addStudentcourse(studentid, courseid);
         return "Suksee";
-        //http://localhost:8080/addtocourse?studentid=?&courseid=?
-    } 
+        // http://localhost:8080/addtocourse?studentid=?&courseid=?
+    }
 
     @GetMapping("delfromcourse")
     public String delSfromcourse(
-        @RequestParam Integer studentid, Integer courseid,
-        @RequestBody(required = false) Student student){
+            @RequestParam Integer studentid, Integer courseid,
+            @RequestBody(required = false) Student student) {
         pCourse.delStudentcourse(studentid, courseid);
         return "Suksee";
-        //http://localhost:8080/delfromcourse?studentid=?&courseid=?
-    } 
-
-
-
-
-
+        // http://localhost:8080/delfromcourse?studentid=?&courseid=?
+    }
 
 }

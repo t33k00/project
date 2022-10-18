@@ -4,6 +4,7 @@ import java.util.List;
 import org.springframework.stereotype.*;
 import com.school.project.data.Course;
 import com.school.project.data.Student;
+
 @Service
 public class CourseService {
 
@@ -27,7 +28,6 @@ public class CourseService {
         return null;
     }
 
-
     public void addStudent(Student student) {
         students.add(student);
     }
@@ -45,14 +45,12 @@ public class CourseService {
         return null;
     }
 
-
-
-    public boolean addStudentcourse(int idnum, int id){
+    public boolean addStudentcourse(int idnum, int id) {
 
         Student student = getbyIdnum(idnum);
         Course course = getbyId(id);
 
-        if(student != null && course != null){
+        if (student != null && course != null) {
             course.addtocourse(student);
             return true;
         }
@@ -60,13 +58,12 @@ public class CourseService {
         return false;
     }
 
-
-    public boolean delStudentcourse(int idnum, int id){
+    public boolean delStudentcourse(int idnum, int id) {
 
         Student student = getbyIdnum(idnum);
         Course course = getbyId(id);
 
-        if(student != null && course != null){
+        if (student != null && course != null) {
             course.delfromcourse(student);
             return true;
         }
@@ -74,5 +71,4 @@ public class CourseService {
         return false;
     }
 
-    
 }
