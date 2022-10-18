@@ -13,7 +13,7 @@ public class Course {
     public Course(){
         this("");
     }
-    
+
     public Course(String name) {
         this.id = idcount++;
     }
@@ -22,7 +22,9 @@ public class Course {
     public void addtocourse(Student student){
         studentids.add(student);
     }
-
+    public void delfromcourse(Student student){
+        studentids.remove(student);
+    }
     public List<Student> getParticipants(){
         return new ArrayList<>(this.studentids);
     }

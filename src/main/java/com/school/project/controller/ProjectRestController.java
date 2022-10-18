@@ -47,17 +47,26 @@ public class ProjectRestController {
         //http://localhost:8080/addstudent
     }
     
-    @GetMapping("addstudenttocourse")
+    @GetMapping("addtocourse")
     public String addStocourse(
         @RequestParam Integer studentid, Integer courseid,
         @RequestBody(required = false) Student student){
         pCourse.addStudentcourse(studentid, courseid);
         return "Suksee";
-        //http://localhost:8080/addstudenttocourse?studentid=?&courseid=?
+        //http://localhost:8080/addtocourse?studentid=?&courseid=?
+    } 
+
+    @GetMapping("delfromcourse")
+    public String delSfromcourse(
+        @RequestParam Integer studentid, Integer courseid,
+        @RequestBody(required = false) Student student){
+        pCourse.delStudentcourse(studentid, courseid);
+        return "Suksee";
+        //http://localhost:8080/delfromcourse?studentid=?&courseid=?
     } 
 
 
-    
+
 
 
 

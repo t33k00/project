@@ -60,5 +60,19 @@ public class CourseService {
         return false;
     }
 
+
+    public boolean delStudentcourse(int idnum, int id){
+
+        Student student = getbyIdnum(idnum);
+        Course course = getbyId(id);
+
+        if(student != null && course != null){
+            course.delfromcourse(student);
+            return true;
+        }
+
+        return false;
+    }
+
     
 }
