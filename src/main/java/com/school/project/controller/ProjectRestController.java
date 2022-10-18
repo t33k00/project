@@ -41,5 +41,11 @@ public class ProjectRestController {
         pStudent.addStudent(student);
         return student;
     }
+    
+    @PostMapping("addstudenttocourse")
+    public String addStocourse(@RequestBody Student student ){
+        pCourse.addStudentcourse(0, 2);
+        return "Suksee";
+    } 
 
 }

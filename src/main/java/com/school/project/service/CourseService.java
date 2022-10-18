@@ -27,6 +27,7 @@ public class CourseService {
         return null;
     }
 
+
     public void addStudent(Student student) {
         students.add(student);
     }
@@ -42,6 +43,21 @@ public class CourseService {
             }
         }
         return null;
+    }
+
+
+
+    public boolean addStudentcourse(int idnum, int id){
+
+        Student student = getbyIdnum(idnum);
+        Course course = getbyId(id);
+
+        if(students != null && courses != null){
+            course.addtocourse(student);
+            return true;
+        }
+
+        return false;
     }
 
     

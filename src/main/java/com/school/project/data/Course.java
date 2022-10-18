@@ -13,9 +13,20 @@ public class Course {
     public Course(){
         this("");
     }
+    
     public Course(String name) {
         this.id = idcount++;
     }
+
+
+    public void addtocourse(Student student){
+        studentids.add(student);
+    }
+
+    public List<Student> getParticipants(){
+        return new ArrayList<>(this.studentids);
+    }
+
 
     public long getId() {
         return this.id;
