@@ -1,9 +1,14 @@
 package com.school.project.data;
+import java.util.List;
+import java.util.ArrayList;
 
 public class Course {
     private long id;
     private String name;
     private static long idcount = 0;
+    List<Student> studentids = new ArrayList<>();
+    
+    
 
     public Course(){
         this("");

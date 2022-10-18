@@ -38,6 +38,7 @@ public class Student {
     public void setAdress(String adress) {
         this.adress = adress;
     }
+    
     public void setName(String name) {
         this.name = name;
     }

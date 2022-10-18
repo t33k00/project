@@ -7,18 +7,18 @@ import org.springframework.web.bind.annotation.RestController;
 import com.school.project.data.Course;
 import com.school.project.service.CourseService;
 import com.school.project.data.Student;
-import com.school.project.service.StudentService;
 import java.util.List;
 
 
 @RestController
 public class ProjectRestController {
-    
+
     
     @Autowired
     CourseService pCourse;
+
     @Autowired
-    StudentService pStudent;
+    CourseService pStudent;
 
     @GetMapping("courses")
     public List<Course> getCourses(){
