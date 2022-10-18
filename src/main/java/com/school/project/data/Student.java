@@ -4,7 +4,7 @@ package com.school.project.data;
 public class Student {
     private long idnum;
     private String name;
-    private String adress;
+    private String address;
     private int phone;
     private static long idnumcount = 0;
     
@@ -16,9 +16,9 @@ public class Student {
     public Student(String name) {
         this.idnum = idnumcount++;
     }
-    public Student(String name, int phone, String adress) {
+    public Student(String name, int phone, String address) {
         this.phone=phone;
-        this.adress=adress;
+        this.address=address;
         this.idnum = idnumcount++;
     }
 
@@ -31,12 +31,12 @@ public class Student {
         return this.name;
     }
 
-    public String getAdress() {
-        return this.adress;
+    public String getAddress() {
+        return this.address;
     }
 
-    public void setAdress(String adress) {
-        this.adress = adress;
+    public void setAddress(String address) {
+        this.address = address;
     }
     
     public void setName(String name) {
