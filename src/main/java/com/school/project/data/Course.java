@@ -45,7 +45,7 @@ public class Course {
     public String getName() {
         return this.name;
     }
- 
+
     public String getTeacher() {
         return this.teacher;
     }
